@@ -1,0 +1,64 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  overflow-x: hidden; /* prevent horizontal scrolling */
+  font-family: sans-serif;
+  padding: 0;
+  margin: 0;
+}
+nav {
+  display: flex;
+  justify-content: flex-start;
+  gap: 2rem;
+  padding: 1rem 2rem;
+  a {
+    font-size: 1.2rem;
+    color: black;
+    text-decoration: none;
+  }
+}
+.pageOne nav a[href='#One'] {
+  text-decoration-line: overline underline;
+}
+.pageTwo nav a[href='#Two'] {
+  text-decoration-line: overline underline;
+}
+
+main,
+.pageOne main {
+  position: relative;
+
+  /* default case */
+  #pageOne {
+    opacity: 1;
+  }
+  #pageTwo {
+    opacity: 0;
+  }
+}
+.pageTwo main {
+  #pageOne {
+    opacity: 0;
+  }
+  #pageTwo {
+    opacity: 1;
+  }
+}
+.page {
+  /* styles that all pages have in common */
+  min-height: 100dvh;
+  width: calc(100vw - 4rem);
+  position: absolute;
+  margin-inline: 2rem;
+  padding: 2rem;
+  border: 1px solid #333;
+  background-color: #e4e4e4;
+  transition: transform 0.4s linear, opacity 0.8s linear;
+  /* applies to both leaving and arriving */
+  opacity: 1;
+  transform: translateX(0);
+}
+.page.inactive {
+  transform: translateX(200%);
+}
