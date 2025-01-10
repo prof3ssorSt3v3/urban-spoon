@@ -54,7 +54,8 @@ main,
   padding: 2rem;
   border: 1px solid #333;
   background-color: #e4e4e4;
-  transition: transform 0.4s linear, opacity 0.8s linear;
+  /* transition: transform 0.4s linear, opacity 0.8s linear; */
+  transition: opacity 0.8s linear;
   /* applies to both leaving and arriving */
   opacity: 1;
   transform: translateX(0);
